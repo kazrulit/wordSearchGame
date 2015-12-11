@@ -4,6 +4,7 @@ import kz.epam.model.pattern.ALetterPattern;
 import kz.epam.model.pattern.LetterPattern;
 import kz.epam.model.word.ClothWord;
 import kz.epam.model.word.FocalWord;
+import kz.epam.model.word.OctetWord;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,18 @@ public class MainController {
     public String showSecondPuzzle(ModelMap modelMap) {
         try {
             List list = FocalWord.getWord();
+            Collections.shuffle(list);
+            modelMap.addAttribute("grid", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "index";
+    }
+
+    @RequestMapping(path = "/third", method = RequestMethod.GET)
+    public String showThirdPuzzle(ModelMap modelMap) {
+        try {
+            List list = OctetWord.getWord();
             Collections.shuffle(list);
             modelMap.addAttribute("grid", list);
         } catch (Exception e) {

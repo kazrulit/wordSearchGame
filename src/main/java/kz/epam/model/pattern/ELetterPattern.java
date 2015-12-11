@@ -1,5 +1,7 @@
 package kz.epam.model.pattern;
 
+import java.util.Random;
+
 /**
  * Created by Khamid_Sarmanov on 12/10/2015.
  */
@@ -15,6 +17,7 @@ public class ELetterPattern implements LetterPattern {
         String bottom = word[2].trim().toUpperCase();
         String middle = word[3].trim().toUpperCase();
 
+        Random random = new Random();
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
 
@@ -23,7 +26,7 @@ public class ELetterPattern implements LetterPattern {
                     if(top.length() > (j -xDifference) && xDifference < j + 1 )
                         grid[i][j] = top.charAt(j - xDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
                 /** Left vertical **/
@@ -31,7 +34,7 @@ public class ELetterPattern implements LetterPattern {
                     if(left.length() > (i - yDifference) && yDifference < i + 1)
                         grid[i][j] = left.charAt(i - yDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
 
@@ -40,7 +43,7 @@ public class ELetterPattern implements LetterPattern {
                     if(middle.length() > (j - xDifference) && xDifference < j + 1 )
                         grid[i][j] = middle.charAt(j - xDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
                 /** Bottom **/
@@ -48,13 +51,11 @@ public class ELetterPattern implements LetterPattern {
                     if(bottom.length() > (j - xDifference) && xDifference < j + 1 )
                         grid[i][j] = bottom.charAt(j - xDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
-
-
                 else {
-                    grid[i][j] = '-';
+                    grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
             }
         }

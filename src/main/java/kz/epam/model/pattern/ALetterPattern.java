@@ -1,5 +1,7 @@
 package kz.epam.model.pattern;
 
+import java.util.Random;
+
 public class ALetterPattern implements LetterPattern {
 
     public static char[][] fillLeter(String... word) {
@@ -13,6 +15,8 @@ public class ALetterPattern implements LetterPattern {
         String right = word[2].trim().toUpperCase();
         String middle = word[3].trim().toUpperCase();
 
+        Random random = new Random();
+
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
 
@@ -21,7 +25,7 @@ public class ALetterPattern implements LetterPattern {
                     if(top.length() > (j -xDifference) && xDifference < j + 1 )
                         grid[i][j] = top.charAt(j - xDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
                 /** Left vertical **/
@@ -29,7 +33,7 @@ public class ALetterPattern implements LetterPattern {
                     if(left.length() > (i - yDifference) && yDifference < i + 1)
                         grid[i][j] = left.charAt(i - yDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
                 /** Right vertical **/
@@ -37,7 +41,7 @@ public class ALetterPattern implements LetterPattern {
                     if(right.length() > (i - yDifference) && yDifference < i + 1)
                         grid[i][j] = right.charAt(i - yDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
                 /** Middle **/
@@ -45,12 +49,12 @@ public class ALetterPattern implements LetterPattern {
                     if(middle.length() > (j - xDifference) && xDifference < j + 1 )
                         grid[i][j] = middle.charAt(j - xDifference);
                     else
-                        grid[i][j] = '-';
+                        grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
 
 
                 else {
-                    grid[i][j] = '-';
+                    grid[i][j] = (char)(random.nextInt(26) + 'A');
                 }
             }
         }
