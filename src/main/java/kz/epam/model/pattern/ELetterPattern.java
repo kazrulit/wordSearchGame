@@ -4,16 +4,16 @@ package kz.epam.model.pattern;
  * Created by Khamid_Sarmanov on 12/10/2015.
  */
 public class ELetterPattern implements LetterPattern {
-    public char[][] fillLeter(String... word) {
+    public static char[][] fillLeter(String... word) {
         char[][] grid = new char[CharHeight + (GridHeight - CharHeight)][CharWidth + (GridWidth - CharWidth)];
 
         int yDifference = (GridHeight - CharHeight)/2;
         int xDifference = (GridWidth - CharWidth)/2;
 
-        String top = word[0].trim();
-        String left = word[1].trim();
-        String bottom = word[2].trim();
-        String middle = word[3].trim();
+        String top = word[0].trim().toUpperCase();
+        String left = word[1].trim().toUpperCase();
+        String bottom = word[2].trim().toUpperCase();
+        String middle = word[3].trim().toUpperCase();
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {

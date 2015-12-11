@@ -4,7 +4,7 @@ package kz.epam.model.pattern;
  * Created by Khamid_Sarmanov on 12/10/2015.
  */
 public class FLetterPattern implements LetterPattern {
-    public char[][] fillLeter(String... word) {
+    public static char[][] fillLeter(String... word) {
         char[][] grid = new char[CharHeight + (GridHeight - CharHeight)][CharWidth + (GridWidth - CharWidth)];
 
         int yDifference = (GridHeight - CharHeight)/2;

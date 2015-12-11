@@ -9,6 +9,4 @@ public interface LetterPattern {
 
     final int GridWidth = 9;
     final int GridHeight = 12;
-
-    char[][] fillLeter(String... word);
 }

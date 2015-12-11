@@ -9,8 +9,7 @@ import org.junit.Test;
 public class OLetterPatternTest extends TestCase {
     @Test
     public void testFillLeter() throws Exception {
-        LetterPattern letterPattern = new OLetterPattern();
-        char[][] grid = letterPattern.fillLeter("board", "beginner", "decadent", "roast");
+        char[][] grid = OLetterPattern.fillLeter("board", "beginner", "decadent", "roast");
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
