@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -25,6 +26,7 @@ public class MainController {
             List list = ClothWord.getWord();
             Collections.shuffle(list);
             modelMap.addAttribute("grid", list);
+            modelMap.addAttribute("smallWords", ClothWord.getSmallWords());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,6 +39,7 @@ public class MainController {
             List list = FocalWord.getWord();
             Collections.shuffle(list);
             modelMap.addAttribute("grid", list);
+            modelMap.addAttribute("smallWords", FocalWord.getSmallWords());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,6 +52,7 @@ public class MainController {
             List list = OctetWord.getWord();
             Collections.shuffle(list);
             modelMap.addAttribute("grid", list);
+            modelMap.addAttribute("smallWords", OctetWord.getSmallWords());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -34,6 +34,13 @@
 
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Cуть этого задания найти скрытое слово, используя следующие слова:</h1>
+                <p><span th:each="smword : ${smallWords}" th:text="${smword + ', '}"></span></p>
+            </div>
+        </div>
     </div>
 </div>
 </body>
